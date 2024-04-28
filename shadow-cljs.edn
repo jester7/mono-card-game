@@ -1,11 +1,21 @@
 ;; shadow-cljs configuration
 {:source-paths
- ["src/dev"
-  "src/main"
-  "src/test"]
+ ["src"]
 
- :dependencies
- []
+ :dependencies [[binaryage/devtools "1.0.7"]
+                [nrepl "1.1.1"]
+                [reagent "1.2.0"]]
 
- :builds
- {}}
+ :builds       {:app {:target     :browser
+                      :output-dir "public/js"
+                      :asset-path "/js"
+                      :build-options
+                      {:cache-level :jars}
+                      :compiler-options {:optimizations :advanced 
+                                         :pretty-print  false
+                                         :source-map false
+                                         :pseudo-names false}
+                      :modules    {:app {:entries [mono.core]}}
+                      :devtools   {:after-load mono.core/mount-root}}}
+
+ :dev-http     {3001 {:root "public"}}}
