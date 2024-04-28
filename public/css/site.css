@@ -34,3 +34,7 @@ h3, h4, h5, h6 {
 #app {
     background: url('/images/green-felt.jpg') repeat;
 }
+
+.ui-frame {
+    background-color: var(--dark-ui-bg);
+}

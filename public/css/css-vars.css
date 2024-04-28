@@ -7,4 +7,12 @@
     --mono-light-1: #fffec2;
 
     --mono-dark-1: #220c10;
+    --mono-dark-blue: #0d2045; /* dark blue */
+    --mono-dark-red: #a21645;
+
+    --dark-ui-bg: var(--mono-dark-blue);
+    --dark-ui-element: var(--mono-dark-red);
+
+    --card-radius: 8px;
+    
 }
