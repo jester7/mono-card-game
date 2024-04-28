@@ -1,0 +1,36 @@
+#app, html, body, .app-wrapper {
+  /* fill viewport */
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+html, body, p {
+    font-family: "zeitung", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--mono-light-1);
+}
+
+h1, h2 {
+    font-family: "informapro", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--mono-dark-1);
+}
+
+h3, h4, h5, h6 {
+    font-family: "informapro", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.logotype {
+    font-family: "sauna-new", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#app {
+    background: url('/images/green-felt.jpg') repeat;
+}
