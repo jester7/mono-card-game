@@ -1,0 +1,66 @@
+.flippable {
+    cursor:pointer;
+}
+
+.draggable {
+    cursor:grab;
+}
+
+.playing-card {
+    display: block;
+    position: absolute;    
+    cursor:grab;
+    width:13rem;
+    height:20rem;
+
+    background-color: transparent;
+    perspective: 1000px;
+}
+
+.playing-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.playing-card {
+    transition: transform 0.5s ease-out;
+}
+
+.playing-card.pickable:hover {
+    transform: translateX(-.3em);
+    transform: translateY(-.3em);
+}
+
+.playing-card.flippable:hover .playing-card-inner {
+    transform:rotateY(0deg);
+}
+
+.playing-card-front, .playing-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.playing-card-front {
+    background: url('/images/cards/test-front.gif') no-repeat;
+    background-size: contain;
+    width:100%;
+    height:100%;
+    background-color:#999;
+    background-size:cover;
+    box-shadow:1px 1px 2px rgba(33,33,33,0.4);
+    border-radius: var(--card-radius);
+}
+
+.playing-card-back {
+    background: url('/images/cards/mono-playing-card-back.jpg') no-repeat;
+    background-size: cover;
+    box-shadow: 1px 1px 2px rgba(33,33,33,0.5);
+    border-radius: var(--card-radius);
+    transform: rotateY(180deg);
+}
