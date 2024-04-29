@@ -1,6 +1,6 @@
 :root {
     --mono-blue: #1c4693;
-    --mono-cherry: #d81e5b;
+    --mono-raspberry: #d81e5b;
     --mono-mint: #59c9a5;
     --mono-yellow: #fffc47;
 
@@ -14,5 +14,10 @@
     --dark-ui-element: var(--mono-dark-red);
 
     --card-radius: 8px;
+
+    --card-back-blue: var(--mono-blue);
+    --card-back-raspberry: var(--mono-raspberry);
+    --card-back-mint: var(--mono-mint);
+    --card-back-yellow: var(--mono-yellow);
     
 }
