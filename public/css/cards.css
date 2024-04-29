@@ -10,11 +10,11 @@
     display: block;
     position: absolute;    
     cursor:grab;
-    width:13rem;
-    height:20rem;
+    width:13em;
+    height:20em;
 
     background-color: transparent;
-    perspective: 1000px;
+    perspective: 800px;
 }
 
 .playing-card-inner {
@@ -30,9 +30,12 @@
     transition: transform 0.5s ease-out;
 }
 
+.playing-card.revealed .playing-card-inner {
+    transform: rotateY(0deg);
+}
+
 .playing-card.pickable:hover {
-    transform: translateX(-.3em);
-    transform: translateY(-.3em);
+    transform: rotateZ(10deg);
 }
 
 .playing-card.flippable:hover .playing-card-inner {
@@ -46,15 +49,72 @@
     backface-visibility: hidden;
 }
 
+.playing-card-front svg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    fill: transparent;
+    stroke: var(--mono-light-1);
+    stroke-width: 0.5em;
+    transform: rotate(30deg);
+}
+
+.playing-card-front.blue {
+	background: var(--card-back-blue);
+}
+
+.playing-card-front.raspberry {
+	background: var(--card-back-raspberry);
+}
+
+.playing-card-front.mint {
+    background: var(--card-back-mint);
+}
+
+.playing-card-front.yellow {
+	background: var(--card-back-yellow);
+}
+
+.playing-card-front::before, .playing-card-front::after {
+    content: attr(data-value);
+    display: block;
+    position: absolute;
+    font-size: 3em;
+}
+
+.playing-card-front::before {
+    left: 0.25em;
+    top: 0.1em;
+}
+
+.playing-card-front::after {
+    right: 0.25em;
+    bottom: 0.15em;
+}
+
+.playing-card-front .value-middle {
+    font-size: 9em;
+    text-align: center;
+    padding-left: 0.05em;
+    margin-top: calc(50% - 0.11em);
+}
+
 .playing-card-front {
-    background: url('/images/cards/test-front.gif') no-repeat;
-    background-size: contain;
+    font-family: informapro, sans-serif;
+    font-weight: 700;
+    font-style: normal;
     width:100%;
     height:100%;
-    background-color:#999;
-    background-size:cover;
+    background-size: cover;
     box-shadow:1px 1px 2px rgba(33,33,33,0.4);
     border-radius: var(--card-radius);
+    border-bottom: 1px solid rgba(33,33,33,0.2);
+    border-right: 1px solid rgba(33,33,33,0.2);
+    border-top: 2px solid rgba(255,255,255,0.2);
+    border-left: 2px solid rgba(255,255,255,0.2);
 }
 
 .playing-card-back {
